@@ -1,0 +1,13 @@
+<form
+  novalidate
+  [formGroup]="search">
+
+  <input
+    placeholder="Write here"
+    formControlName="term"
+    autocomplete="off">
+</form>
+
+<div
+  *ngIf="search"
+  class="text">Value: {{ search.get('term').value }}</div>

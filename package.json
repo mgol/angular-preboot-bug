@@ -1,0 +1,63 @@
+{
+  "name": "test-app",
+  "scripts": {
+    "build": "yarn run build-browser && yarn run build-server",
+    "build-browser": "ng build --prod --output-hashing=false",
+    "build-server": "ng build --prod --app=server --output-hashing=false && webpack --config webpack.server.config.js --progress --colors",
+    "build-dev": "yarn run build-dev-browser && yarn run build-dev-server",
+    "build-dev-browser": "ng build --environment prod --aot",
+    "build-dev-server": "ng build --environment prod --aot --app=server --output-hashing=false && webpack --config webpack.server.config.js --progress --colors",
+    "lint": "tslint --project . --format codeFrame",
+    "ng": "ng",
+    "start-node": "nodemon dist/server.js",
+    "start-universal": "yarn run build-dev && yarn run start-node"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "5.2.3",
+    "@angular/common": "5.2.3",
+    "@angular/compiler": "5.2.3",
+    "@angular/core": "5.2.3",
+    "@angular/forms": "5.2.3",
+    "@angular/http": "5.2.3",
+    "@angular/platform-browser": "5.2.3",
+    "@angular/platform-browser-dynamic": "5.2.3",
+    "@angular/platform-server": "5.2.3",
+    "@angular/router": "5.2.3",
+    "@angular/upgrade": "5.2.3",
+    "@nguniversal/module-map-ngfactory-loader": "5.0.0-beta.5",
+    "core-js": "2.5.3",
+    "express": "4.16.2",
+    "ng-lazyload-image": "3.4.2",
+    "preboot": "6.0.0-beta.1",
+    "rxjs": "5.5.6",
+    "zone.js": "0.8.20"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.6.7",
+    "@angular/compiler-cli": "5.2.3",
+    "@types/angular": "1.6.42",
+    "@types/node": "8.5.9",
+    "codelyzer": "4.1.0",
+    "nodemon": "1.14.12",
+    "ts-loader": "3.4.0",
+    "ts-node": "4.1.0",
+    "tslint": "5.9.1",
+    "typescript": "2.6.2",
+    "webpack": "3.10.0"
+  },
+  "engines": {
+    "node": "^8.7.0"
+  },
+  "browserslist": [
+    "last 3 Chrome versions",
+    "last 3 Firefox versions",
+    "Firefox ESR",
+    "last 3 Safari versions",
+    "last 3 Edge versions",
+    "IE 11",
+    "last 3 iOS versions",
+    "last 3 ChromeAndroid versions",
+    "last 3 FirefoxAndroid versions"
+  ]
+}
