@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
-import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
-import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
+import { ServerModule } from '@angular/platform-server';
+import { BrowserModule } from '@angular/platform-browser';
+import { ServerPrebootModule } from 'preboot/server';
 
-import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   imports: [
-    // The AppServerModule should import your AppModule followed
-    // by the ServerModule from @angular/platform-server.
-    AppModule,
+    BrowserModule.withServerTransition({appId: 'yg-app'}),
     ServerModule,
-    ServerTransferStateModule,
-    ModuleMapLoaderModule, // <-- *Important* to have lazy-loaded routes work
+    ServerPrebootModule.recordEvents({ appRoot: 'yg-root' }),
+    AppRoutingModule,
+    HomeModule,
   ],
   providers: [],
-  // Since the bootstrapped component is not inherited from your
-  // imported AppModule, it needs to be repeated here.
   bootstrap: [AppComponent],
 })
 export class AppServerModule {

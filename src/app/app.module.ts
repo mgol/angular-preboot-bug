@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { PrebootModule } from 'preboot';
+import { BrowserPrebootModule } from 'preboot/browser';
 import { Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { UpgradeModule } from '@angular/upgrade/static';
 import { isPlatformBrowser } from '@angular/common';
@@ -16,9 +16,8 @@ import { HomeModule } from './pages/home/home.module';
     ...upgradedComponents,
   ],
   imports: [
-    // .withServerTransition() is needed to support Universal rendering.
-    BrowserModule.withServerTransition({appId: 'yg-app'}),
-    PrebootModule.withConfig({appRoot: 'yg-root'}),
+    BrowserModule,
+    BrowserPrebootModule.replayEvents(),
     UpgradeModule,
     AppRoutingModule,
     HomeModule,

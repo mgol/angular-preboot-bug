@@ -11,7 +11,7 @@ module.exports = {
         server: './server.ts',
     },
     target: 'node',
-    resolve: {extensions: ['.ts', '.js']},
+    resolve: {extensions: ['.js', '.ts']},
     // Make sure we include all node_modules etc
     externals: [/(node_modules|main\..*\.js)/],
     output: {
