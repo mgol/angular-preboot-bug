@@ -9,5 +9,14 @@
 </head>
 <body>
   <yg-root></yg-root>
+
+  <script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+  <script>
+    angular
+      .module('legacyApp', [])
+      .component('myLegacyComponent', {
+        template: '<p>Hello from AngularJS!</p>',
+      });
+  </script>
 </body>
 </html>
