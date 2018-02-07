@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'yg-root',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private router: Router,
+  ) {}
 
 
   ngOnInit() {
     console.log('AppComponent#ngOnInit');
+    this.router.initialNavigation();
   }
 }
