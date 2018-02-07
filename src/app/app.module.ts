@@ -18,7 +18,10 @@ import { HomeModule } from './pages/home/home.module';
   imports: [
     // .withServerTransition() is needed to support Universal rendering.
     BrowserModule.withServerTransition({appId: 'yg-app'}),
-    PrebootModule.withConfig({appRoot: 'yg-root'}),
+    PrebootModule.withConfig({
+      appRoot: 'yg-root',
+      noReplay: true,
+    }),
     UpgradeModule,
     AppRoutingModule,
     HomeModule,

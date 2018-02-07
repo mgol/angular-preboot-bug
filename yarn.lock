@@ -4474,9 +4474,9 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.16:
     source-map "^0.6.1"
     supports-color "^5.1.0"
 
-preboot@6.0.0-beta.1:
-  version "6.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/preboot/-/preboot-6.0.0-beta.1.tgz#b06c0a282e008305e144c961d1b58313a3e34068"
+preboot@6.0.0-beta.2:
+  version "6.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/preboot/-/preboot-6.0.0-beta.2.tgz#bf18eea53a880f951986cd8c3786f72ec3a38f61"
 
 prepend-http@^1.0.0, prepend-http@^1.0.1:
   version "1.0.4"
